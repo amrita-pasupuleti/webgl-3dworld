@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>Assignment 3</title>
+  </head>
+
+  <body onload="main()">
+    <div style="display: flex; align-items: flex-start">
+      <div style="position: relative; width: 400px; height: 400px">
+        <div
+          id="crosshair"
+          style="
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 10px;
+            height: 10px;
+            background: white;
+            border-radius: 50%;
+            transform: translate(-50%, -50%);
+            pointer-events: none;
+            z-index: 1000;
+          "
+        ></div>
+
+        <canvas id="webgl" width="400" height="400">
+          Please use a browser that supports "canvas"
+        </canvas>
+      </div>
+
+      <div>
+        <p id="fps" style="font-family: monospace; color: black"></p>
+        <p>Use WASD to move the camera</p>
+        <p>
+          Use QE or click and hold the mouse to pan the camera left and right
+        </p>
+        <p>
+          Press X when pointing at nearby stone or diamond blocks to delete them
+        </p>
+        <p>Press C to add a stone block in front of you</p>
+
+        <button onclick="toggleSky()">Dark Mode Textures!</button>
+
+        <p>Story: Try to mine the secret diamond!</p>
+        <p
+          id="story"
+          style="
+            display: none;
+            font-weight: bold;
+            color: darkblue;
+            margin-top: 10px;
+          "
+        >
+          Story: Diamond pickaxe collected!
+        </p>
+      </div>
+    </div>
+
+    <script src="lib/webgl-utils.js"></script>
+    <script src="lib/webgl-debug.js"></script>
+    <script src="lib/cuon-utils.js"></script>
+    <script src="lib/cuon-matrix.js"></script>
+    <script src="Cube.js"></script>
+    <script src="camera.js"></script>
+    <script src="asg3.js"></script>
+  </body>
+</html>
